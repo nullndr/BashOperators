@@ -5,15 +5,15 @@ This document contains a list of all bash operators
 <table>
   <tr><td width=33% valign=top>
 
-- [integer operators](#integer-operators)
-  - [+ operator](#integer-addition-operator)
-  - [- operator](#integer-subtraction-operator)
-  - [* operator](#integer-multiplication-operator)
-  - [/ operator](#integer-division-operator)
-  - [% operator](#integer-module-operator)
-  - [** operator](#integer-power-operator)
-  - [++ operator](#integer-increment-operator)
-  - [-- operator](#integer-decrement-operator)
+- [arithmetic operators](#arithmetic-operators)
+  - [+ operator](#arithmetic-addition-operator)
+  - [- operator](#arithmetic-subtraction-operator)
+  - [* operator](#arithmetic-multiplication-operator)
+  - [/ operator](#arithmetic-division-operator)
+  - [% operator](#arithmetic-module-operator)
+  - [** operator](#arithmetic-power-operator)
+  - [++ operator](#arithmetic-increment-operator)
+  - [-- operator](#arithmetic-decrement-operator)
   - [+= operator]()
   - [-= operator]()
   - [*= operator]()
@@ -98,23 +98,56 @@ This document contains a list of all bash operators
 
 ***
 
-## Integer operators
+## arithmetic operators
 
-### Integer addition operator
+### arithmetic addition operator
 
-### Integer subtraction operator
+The `+` operator is an arithmetic operator used to add numeric values:
 
-### Integer multiplication operator
+```shell
+echo $((2 + 2)) # 4
 
-### Integer division operator
+echo `expr 2 + 2` # 4
+```
 
-### Integer module operator
+The arithmetic `+` operator can be used as binary operator or as unary operator:
 
-### Integer power operator
+```shell
+echo $((+ 2)) # 2
 
-### Integer increment operator
+echo `expr + 2` # 2
+```
 
-### Integer decrement operator
+### arithmetic subtraction operator
+
+The `-` operator is an arithmetic operator used to subtraction numeric values:
+
+```shell
+echo $((3 - 2)) # 1
+
+echo `expr 3 - 2` # 1
+```
+
+The arithmetic `-` operator can be used as binary operator or as unary operator:
+
+```shell
+echo $((- 2)) # -2
+
+
+echo $((- -5)) # 5
+```
+
+### arithmetic multiplication operator
+
+### arithmetic division operator
+
+### arithmetic module operator
+
+### arithmetic power operator
+
+### arithmetic increment operator
+
+### arithmetic decrement operator
 
 ## Logical operators
 
