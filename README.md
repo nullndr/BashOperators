@@ -4,6 +4,7 @@ This document contains a list of all bash operators
 
 <table>
   <tr><td width=33% valign=top>
+
 - [integer operators](#integer-operators)
   - [+ operator](#integer-addition-operator)
   - [- operator](#integer-subtraction-operator)
@@ -26,8 +27,10 @@ This document contains a list of all bash operators
   - [|| operator]()
   - [! operator]()
 - [ternary operator](#ternary-operator)
-</td><td width=33% valign=top>
 - [comma operator](#comma-operator)
+
+</td><td width=33% valign=top>
+
 - [bitwise operators](#bitwise-operators)
   - [& operator]()
   - [| operator]()
@@ -51,15 +54,17 @@ This document contains a list of all bash operators
   - [>= operator]()
   - [< operator]()
   - [<= operator]()
-</td><td width=33% valign=top>
 - [string operators](#string-operators)
   - [-z operator]()
-  - [-n operator]() 
+  - [-n operator]()
   - [= operator]()
   - [== operator]()
   - [!= operator]()
   - [< operator]()
   - [> operator]()
+
+</td><td width=33% valign=top>
+
 - [file operators](#file-operators)
   - [-b operator]()
   - [-c operator]()
