@@ -207,27 +207,27 @@ echo $((i))       # 8
 
 ### arithmetic addition assign operator
 
-The `+=` operator is a shortcut for `a = a + x`
+The `+=` operator is a shortcut for `a = a + x`.
 
 ### arithmetic subtraction assign operator
 
-The `-=` operator is a shortcut for `a = a - x`
+The `-=` operator is a shortcut for `a = a - x`.
 
 ### arithmetic multiplication assign operator
 
-The `*=` operator is a shortcut for `a = a * x`
+The `*=` operator is a shortcut for `a = a * x`.
 
 ### arithmetic division assign operator
 
-The `/=` operator is a shortcut for `a = a / x`
+The `/=` operator is a shortcut for `a = a / x`.
 
 ### arithmetic module assign operator
 
-The `%=` operator is a shortcut for `a = a % x`
+The `%=` operator is a shortcut for `a = a % x`.
 
 ### arithmetic power assign operator
 
-The `**=` operator is a shortcut for `a = a ** x`
+The `**=` operator is a shortcut for `a = a ** x`.
 
 ## Logical operators
 
