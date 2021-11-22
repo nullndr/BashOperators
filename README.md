@@ -14,12 +14,12 @@ This document contains a list of all bash operators
   - [** operator](#arithmetic-power-operator)
   - [++ operator](#arithmetic-increment-operator)
   - [-- operator](#arithmetic-decrement-operator)
-  - [+= operator]()
-  - [-= operator]()
-  - [*= operator]()
-  - [/= operator]()
-  - [%= operator]()
-  - [**= operator]()
+  - [+= operator](#arithmetic-addition-assign-operator)
+  - [-= operator](#arithmetic-subtraction-assign-operator)
+  - [*= operator](#arithmetic-multiplication-assign-operator)
+  - [/= operator](#arithmetic-division-assign-operator)
+  - [%= operator](#arithmetic-module-assign-operator)
+  - [**= operator](#arithmetic-power-assign-operator)
 - [logical operators](#logical-operators)
   - [-a operator]()
   - [-o operator]()
@@ -114,9 +114,11 @@ The arithmetic `+` operator can be used as binary operator or as unary operator:
 
 ```shell
 echo $((+ 2)) # 2
-
-echo `expr + 2` # 2
 ```
+
+NB:
+
+The `expr` program is deprecated, because it is pre-POSIX, please avoid using it.
 
 ### arithmetic subtraction operator
 
@@ -124,8 +126,6 @@ The `-` operator is an arithmetic operator used to subtraction numeric values:
 
 ```shell
 echo $((3 - 2)) # 1
-
-echo `expr 3 - 2` # 1
 ```
 
 The arithmetic `-` operator can be used as binary operator or as unary operator:
@@ -139,15 +139,95 @@ echo $((- -5)) # 5
 
 ### arithmetic multiplication operator
 
+The `*` operator is an arithmetic operator used to multiply numeric values:
+
+```shell
+echo $((3 * 2)) # 6
+```
+
 ### arithmetic division operator
+
+The `/` operator is an arithmetic operator used to divide numeric values:
+
+```shell
+echo $((3 / 2))     # 1
+echo $((3.0 / 2))   # 1.5
+echo $((3 / 2.0))   # 1.5
+```
 
 ### arithmetic module operator
 
+The `%` operator is an arithmetic operator used to get the rest of the division:
+
+```shell
+echo $((5 % 2.4))   # 0.2
+```
+
 ### arithmetic power operator
+
+The `**` operator is an arithmetic operator used to obtain the result of elevation to power:
+
+```shell
+echo $(( 2 ** 3))   # 8
+```
 
 ### arithmetic increment operator
 
+The `++` operator is used to increment the value of a variable by 1.
+When the operator is used before the variable then it will 
+act as a pre-increment operator that means the value of the variable 
+will be incremented first and will do other operation later.
+
+```shell
+i=9
+
+echo $((++ i + 10)) # 10
+```
+
+When the `++` operator is used after the variable then it will act as post-increment 
+operator, and it will increment the value of the variable by 1 after doing another task.
+
+```shell
+i=9
+
+echo $((i ++))    # 9
+echo $((i))       # 10
+```
+
 ### arithmetic decrement operator
+
+The `--` operator is the same as the `++` operator, except it decrements the value of the variable by 1.
+
+```shell
+i=10
+echo $((--i))     # 9
+echo $((i--))     # 9
+echo $((i))       # 8
+```
+
+### arithmetic addition assign operator
+
+The `+=` operator is a shortcut for `a = a + x`
+
+### arithmetic subtraction assign operator
+
+The `-=` operator is a shortcut for `a = a - x`
+
+### arithmetic multiplication assign operator
+
+The `*=` operator is a shortcut for `a = a * x`
+
+### arithmetic division assign operator
+
+The `/=` operator is a shortcut for `a = a / x`
+
+### arithmetic module assign operator
+
+The `%=` operator is a shortcut for `a = a % x`
+
+### arithmetic power assign operator
+
+The `**=` operator is a shortcut for `a = a ** x`
 
 ## Logical operators
 
