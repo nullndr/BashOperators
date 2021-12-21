@@ -1,9 +1,9 @@
 ## List of Bash operators
 
-This document contains a list of all bash operators 
+This document contains a list of all bash operators with their description.
 
 <table>
-  <tr><td width=33% valign=top>
+  <tr><td width=33% valign="top">
 
 - [arithmetic operators](#arithmetic-operators)
   - [+ operator](#arithmetic-addition-operator)
@@ -29,7 +29,7 @@ This document contains a list of all bash operators
 - [ternary operator](#ternary-operator)
 - [comma operator](#comma-operator)
 
-</td><td width=33% valign=top>
+</td><td width=33% valign="top">
 
 - [bitwise operators](#bitwise-operators)
   - [& operator]()
@@ -63,7 +63,7 @@ This document contains a list of all bash operators
   - [< operator]()
   - [> operator]()
 
-</td><td width=33% valign=top>
+</td><td width=33% valign="top">
 
 - [file operators](#file-operators)
   - [-b operator]()
@@ -230,6 +230,116 @@ The `%=` operator is a shortcut for `a = a % x`.
 The `**=` operator is a shortcut for `a = a ** x`.
 
 ## Logical operators
+
+### -a logical operator
+
+### -o logical operator
+
+### && logical operator
+
+The `&&` operator is a comparison operator that is used to create the boolean AND logic.
+
+When all conditions are true, then the AND gate return true
+
+```bash
+$ echo true && true
+
+$ echo $?
+0
+
+$ echo false && false
+
+$ echo $?
+1
+
+$ echo true && false
+
+$ echo $?
+1
+
+$ echo false && true
+
+$ echo $?
+1
+```
+
+The `&&` operator is known as short-circuit operator, enabling you
+to not evaluating the right side of the expression when the overall
+result of the expression can be predicted from the left side value.
+
+Let me show you a simple example:
+
+```bash
+$ true && echo "Hello"
+Hello
+```
+
+This is simple, the left side (`true`) is evaluated as true, then the
+right side can be evaluated, displaying `Hello`.
+
+But check this:
+
+```bash
+$ false && echo "Hello"
+```
+
+Nothing is displayed, this because the left side is evaluated as false,
+so the `&&` obviously will return false, so there is no need to evaluate
+the right side.
+
+### || logical operator
+
+The `||` operator is a comparison operator that is used to create the boolean OR logic.
+
+When one or all conditions are true, then the OR gate return true
+
+```bash
+$ echo true && true
+
+$ echo $?
+0
+
+$ echo false && false
+
+$ echo $?
+1
+
+$ echo true && false
+
+$ echo $?
+0
+
+$ echo false && true
+
+$ echo $?
+0
+```
+
+The `||` operator is known as short-circuit operator, enabling you
+to not evaluating the right side of the expression when the overall
+result of the expression can be predicted from the left side value.
+
+Let me show you a simple example:
+
+```bash
+$ false || echo "Hello"
+Hello
+```
+
+This is simple, the left side (`false`) is evaluated as false, then the
+right side is evaluated, displaying `Hello`.
+
+But check this:
+
+```bash
+$ true || echo "Hello"
+```
+
+Nothing is displayed, this because the left side is evaluated as true,
+so the `||` obviously will return true, so there is no need to evaluate
+the right side.
+
+### ! logical operator
 
 ## Ternary operator
 
