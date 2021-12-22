@@ -22,28 +22,26 @@ This document contains a list of all bash operators with their description.
   - [%= operator](#arithmetic-module-assign-operator)
   - [**= operator](#arithmetic-power-assign-operator)
 - [logical operators](#logical-operators)
-  - [-a operator]()
-  - [-o operator]()
-  - [&& operator]()
-  - [|| operator]()
-  - [! operator]()
+  - [&& operator](#logical-and-operator)
+  - [|| operator](#logical-or-operator)
+  - [! operator](#logical-not-operator)
 - [ternary operator](#ternary-operator)
 - [comma operator](#comma-operator)
 
 </td><td width=33% valign="top">
 
 - [bitwise operators](#bitwise-operators)
-  - [& operator]()
-  - [| operator]()
-  - [^ operator]()
-  - [>> operator]()
-  - [<< operator]()
-  - [~ operator]()
-  - [&= operator]()
-  - [|= operator]()
-  - [^= operator]()
-  - [>>= operator]()
-  - [<<= operator]()
+  - [& operator](#bitwise-and-operator)
+  - [| operator](#bitwise-or-operator)
+  - [^ operator](#bitwise-xor-operator)
+  - [~ operator](#bitwise-not-operator)
+  - [>> operator](#bitwise-rightshift-operator)
+  - [<< operator](#bitwise-leftshift-operator)
+  - [&= operator](#bitwise-and-assign-operator)
+  - [|= operator](#bitwise-or-assign-operator)
+  - [^= operator](#bitwise-xor-assign-operator)
+  - [>>= operator](#bitwise-rightshift-assign-operator)
+  - [<<= operator](#bitwise-leftshift-assign-operator)
 - [comparison operators](#comparison-operators)
   - [-eq operator]()
   - [-ne operator]()
@@ -199,6 +197,7 @@ $ echo $(( 2 ** 3))
 8
 ```
 
+<a id="arithmetic-increment-operator"></a>
 ### arithmetic increment operator
 
 The `++` operator is used to increment the value of a variable by 1.
@@ -207,60 +206,91 @@ act as a pre-increment operator that means the value of the variable
 will be incremented first and will do other operation later.
 
 ```shell
-i=9
+$ i=9
 
-echo $((++ i + 10)) # 10
+$ echo $((++ i + 10))
+20
 ```
 
 When the `++` operator is used after the variable then it will act as post-increment 
 operator, and it will increment the value of the variable by 1 after doing another task.
 
 ```shell
-i=9
+$ i=9
 
-echo $((i ++))    # 9
-echo $((i))       # 10
+$ echo $((i ++))
+9
+
+$ echo $((i))
+10
 ```
 
+<a id="arithmetic-decrement-operator"></a>
 ### arithmetic decrement operator
 
 The `--` operator is the same as the `++` operator, except it decrements the value of the variable by 1.
 
 ```shell
-i=10
-echo $((--i))     # 9
-echo $((i--))     # 9
-echo $((i))       # 8
+$ i=10
+
+$ echo $((--i))
+9
+
+$ echo $((i--))
+9
+
+$ echo $((i))
+8
 ```
 
+<a id="arithmetic-addition-assign-operator"></a>
 ### arithmetic addition assign operator
 
 The `+=` operator is a shortcut for `a = a + x`.
 
+```bash
+$ a=10
+
+$ echo $((a += 10))
+20
+
+$ echo $a
+20
+```
+
+<a id="arithmetic-subtraction-assign-operator"></a>
 ### arithmetic subtraction assign operator
 
 The `-=` operator is a shortcut for `a = a - x`.
 
+<a id="arithmetic-mmultiplication-assign-operator"></a>
 ### arithmetic multiplication assign operator
 
 The `*=` operator is a shortcut for `a = a * x`.
 
+<a id="arithmetic-division-operator"></a>
 ### arithmetic division assign operator
 
 The `/=` operator is a shortcut for `a = a / x`.
 
+<a id="arithmetic-module-assign-operator"></a>
 ### arithmetic module assign operator
 
 The `%=` operator is a shortcut for `a = a % x`.
 
+<a id="arithmetic-power-assign-operator"></a>
 ### arithmetic power assign operator
 
 The `**=` operator is a shortcut for `a = a ** x`.
 
 ---
 
+<a id="logical-operators"></a>
 ## Logical operators
 
+The logical operators are used to perform logical operations.
+
+<a id="logical-and-operator"></a>
 ### && logical operator
 
 The `&&` operator is a comparison operator that is used to create the boolean AND logic.
@@ -313,6 +343,7 @@ Nothing is displayed, this because the left side is evaluated as false,
 so the `&&` obviously will return false, so there is no need to evaluate
 the right side.
 
+<a id="logical-or-operator"></a>
 ### || logical operator
 
 The `||` operator is a comparison operator that is used to create the boolean OR logic.
@@ -365,6 +396,7 @@ Nothing is displayed, this because the left side is evaluated as true,
 so the `||` obviously will return true, so there is no need to evaluate
 the right side.
 
+<a id="logical-not-operator"></a>
 ### ! logical operator
 
 The `!` operator transform a `true` into a `false` and vice-versa.
@@ -379,10 +411,12 @@ The `!` operator transform a `true` into a `false` and vice-versa.
 
 ---
 
+<a id="bitwise-operators"></a>
 ## Bitwise operators
 
 The bitwise operators are operators used to perform bit operations on pattern.
 
+<a id="bitwise-and-operator"></a>
 ### & operator
 
 The `&` operator perform the bitwise AND gate.
@@ -400,6 +434,7 @@ The AND will be executed on each bit of each expression:
 & -> 000
 ```
 
+<a id="bitwise-or-operator"></a>
 ### | operator
 
 The `|` operator perform the bitwise OR gate.
@@ -417,6 +452,7 @@ The OR will be executed on each bit of each expression:
 | -> 111
 ```
 
+<a id="bitwise-xor-operator"></a>
 ### ^ operator
 
 The `^` perform the bitwise eXclusive OR (XOR) gate.
@@ -434,6 +470,7 @@ The XOR will be executed on each bit of each expression:
 ^ -> 110
 ```
 
+<a id="bitwise-not-operator"></a>
 ### ~ operator
 
 The `~` operator perform the bitwise negation.
@@ -449,14 +486,31 @@ The `~` is performed on each bit of the expression.
 8 -> 1000
 ~ -> 0111
 ```
- 
+
+<a id="bitwise-rightshift-operator"></a>
 ### >> operator
 
 The `>>` operator perform the right shift of the expression.
 
+<a id="bitwise-leftshift-operator"></a>
 ### << operator
 
 The `<<` operator is used to perform the left shift of the expression.
+
+<a id="bitwise-and-assign-operator"></a>
+### &= operator
+
+<a id="bitwise-and-assign-operator"></a>
+### |= operator
+
+<a id="bitwise-and-assign-operator"></a>
+### ^= operator
+
+<a id="bitwise-rightshift-assign-operator"></a>
+### >>= operator
+
+<a id="bitwise-leftshift-assign-operator"></a>
+### <<= operator
 
 ## Comparison operators
 
