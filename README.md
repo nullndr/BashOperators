@@ -5,6 +5,7 @@ This document contains a list of all bash operators with their description.
 <table>
   <tr><td width=33% valign="top">
 
+- [arithmetic expansion](#arithmetic-expansion)
 - [arithmetic operators](#arithmetic-operators)
   - [+ operator](#arithmetic-addition-operator)
   - [- operator](#arithmetic-subtraction-operator)
@@ -96,79 +97,106 @@ This document contains a list of all bash operators with their description.
   </tr>
 </table>
 
-***
+---
 
+<a id="arithmetic-expansion></a>
+## arithmetic expansion
+
+The `$(( ... ))` is known as arithmetic expansion, which is evaluated and expands to the result.
+
+The output is guaranteed to be one word and a digit in Bash.
+
+The oldest form, `$[ ... ]` is deprecated and must not be used; also, 
+the `expr` program is deprecated, because it is pre-POSIX, please avoid using it.
+
+---
+
+<a id="arithmetic-operators></a>
 ## arithmetic operators
 
-### arithmetic addition operator
+The arithmetic operators are used to perform basic arithmetic operations.
+
+<a id="arithmetic-addition-operator></a>
+### + operator
 
 The `+` operator is an arithmetic operator used to add numeric values:
 
 ```shell
-echo $((2 + 2)) # 4
-
-echo `expr 2 + 2` # 4
+$ echo $((2 + 2))
+4
 ```
 
 The arithmetic `+` operator can be used as binary operator or as unary operator:
 
 ```shell
-echo $((+ 2)) # 2
+$ echo $((+ 2))
+2
 ```
 
-NB:
-
-The `expr` program is deprecated, because it is pre-POSIX, please avoid using it.
-
-### arithmetic subtraction operator
+<a id="arithmetic-subtraction-operator></a>
+### - operator
 
 The `-` operator is an arithmetic operator used to subtraction numeric values:
 
 ```shell
-echo $((3 - 2)) # 1
+$ echo $((3 - 2)) 
+1
 ```
 
 The arithmetic `-` operator can be used as binary operator or as unary operator:
 
 ```shell
-echo $((- 2)) # -2
+$ echo $((- 2))
+-2
 
-
-echo $((- -5)) # 5
+$ echo $((- -5)) 
+5
 ```
 
-### arithmetic multiplication operator
+<a id="arithmetic-multiplication-operator></a>
+### * operator
 
 The `*` operator is an arithmetic operator used to multiply numeric values:
 
 ```shell
-echo $((3 * 2)) # 6
+$ echo $((3 * 2))
+6
 ```
 
-### arithmetic division operator
+<a id="arithmetic-division-operator></a>
+### / operator
 
 The `/` operator is an arithmetic operator used to divide numeric values:
 
 ```shell
-echo $((3 / 2))     # 1
-echo $((3.0 / 2))   # 1.5
-echo $((3 / 2.0))   # 1.5
+$ echo $((3 / 2))
+1
+
+$ echo $((3.0 / 2))
+1.5
+
+$ echo $((3 / 2.0)) 
+1.5
 ```
 
-### arithmetic module operator
+<a id="arithmetic-module-operator></a>
+### % operator
 
 The `%` operator is an arithmetic operator used to get the rest of the division:
 
 ```shell
-echo $((5 % 2.4))   # 0.2
+$ echo $((5 % 2.4))
+0.2
 ```
 
-### arithmetic power operator
+<a id="arithmetic-power-operator></a>
+### ** operator
 
 The `**` operator is an arithmetic operator used to obtain the result of elevation to power:
 
 ```shell
-echo $(( 2 ** 3))   # 8
+$ echo $(( 2 ** 3))
+8
 ```
 
 ### arithmetic increment operator
@@ -229,11 +257,9 @@ The `%=` operator is a shortcut for `a = a % x`.
 
 The `**=` operator is a shortcut for `a = a ** x`.
 
+---
+
 ## Logical operators
-
-### -a logical operator
-
-### -o logical operator
 
 ### && logical operator
 
@@ -341,16 +367,109 @@ the right side.
 
 ### ! logical operator
 
+The `!` operator transform a `true` into a `false` and vice-versa.
+
+---
+
 ## Ternary operator
+
+---
 
 ## Comma operator
 
+---
+
 ## Bitwise operators
+
+The bitwise operators are operators used to perform bit operations on pattern.
+
+### & operator
+
+The `&` operator perform the bitwise AND gate.
+
+```bash
+$ echo $((4 & 3))
+0
+```
+
+The AND will be executed on each bit of each expression:
+
+```
+4 -> 100
+3 -> 011
+& -> 000
+```
+
+### | operator
+
+The `|` operator perform the bitwise OR gate.
+
+```bash
+$ echo $((4 & 3))
+7
+```
+
+The OR will be executed on each bit of each expression:
+
+```
+4 -> 100
+3 -> 011
+| -> 111
+```
+
+### ^ operator
+
+The `^` perform the bitwise eXclusive OR (XOR) gate.
+
+```bash
+$ echo $((5 ^ 3))
+6
+```
+
+The XOR will be executed on each bit of each expression:
+
+```
+5 -> 101
+3 -> 011
+^ -> 110
+```
+
+### ~ operator
+
+The `~` operator perform the bitwise negation.
+
+```bash
+echo $((~ 8))
+-9
+```
+
+The `~` is performed on each bit of the expression.
+
+```
+8 -> 1000
+~ -> 0111
+```
+ 
+### >> operator
+
+The `>>` operator perform the right shift of the expression.
+
+### << operator
+
+The `<<` operator is used to perform the left shift of the expression.
 
 ## Comparison operators
 
+---
+
 ## String operators
+
+---
 
 ## File operators
 
+---
+
 ## Redirect operators
+
+---
