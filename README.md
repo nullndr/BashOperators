@@ -403,7 +403,74 @@ The `!` operator transform a `true` into a `false` and vice-versa.
 
 ---
 
+<a id="ternary-operator"></a>
 ## Ternary operator
+
+All languages have an operator called *ternary operator*, that act like an if as expression.
+
+Python:
+
+```python
+a = 5 if True else -5
+print(a)  # 5 
+```
+
+C:
+
+```c
+#include <stdio.h>
+#include <stdbool.h>
+
+int main() {
+
+  int a = (true) ? 5 : -5 ;
+
+  return 0;
+}
+```
+
+Bash does not have a native ternary operator, even if someone says there is.
+
+Instead, you can use the fact that logical operators act as short circuit operators.
+
+```bash
+$ [[ 5 -eq 5 ]] && echo "5 is equal to 5"
+5 is equal to 5
+
+$ [[ 5 -eq 4 ]] && echo "5 is equal to 4"
+```
+
+This because, as we already said, the `&&` operator evaluate the right side only if the left side equals to `true`.
+
+But what if we need to have an expression if the condition is false?
+
+The `||` will rescue us!
+
+```bash
+$ [[ 5 -eq 4 ]] && echo "5 is equal to 4" || echo "5 is not equal to 4"
+5 is not equal to 4
+```
+
+The `&&` operator has a higher precedence than the `||` operator, so the precedence command will be executed as:
+
+```bash
+ [[ 5 -eq 4 ]] && echo "5 is equal to 4" || echo "5 is not equal to 4"
+ 
+false || echo "5 is not equal to 4"
+```
+
+Now, the `||` operator evaluate the right side only if the left side is `false`, that's it.
+
+There is another way to create the ternary operator, using the `case`:
+
+```bash
+case $((5 == 5)) in 
+  1) echo "5 is equal to 5" ;;
+  0) echo "5 is not equal to 5";;
+esac
+```
+
+By the way, this look like a `switch`.
 
 ---
 
