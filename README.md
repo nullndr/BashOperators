@@ -99,7 +99,7 @@ This document contains a list of all bash operators with their description.
 
 ---
 
-<a id="arithmetic-expansion></a>
+<a id="arithmetic-expansion"></a>
 ## arithmetic expansion
 
 The `$(( ... ))` is known as arithmetic expansion, which is evaluated and expands to the result.
@@ -111,12 +111,12 @@ the `expr` program is deprecated, because it is pre-POSIX, please avoid using it
 
 ---
 
-<a id="arithmetic-operators></a>
+<a id="arithmetic-operators"></a>
 ## arithmetic operators
 
 The arithmetic operators are used to perform basic arithmetic operations.
 
-<a id="arithmetic-addition-operator></a>
+<a id="arithmetic-addition-operator"></a>
 ### + operator
 
 The `+` operator is an arithmetic operator used to add numeric values:
@@ -133,7 +133,7 @@ $ echo $((+ 2))
 2
 ```
 
-<a id="arithmetic-subtraction-operator></a>
+<a id="arithmetic-subtraction-operator"></a>
 ### - operator
 
 The `-` operator is an arithmetic operator used to subtraction numeric values:
@@ -153,7 +153,7 @@ $ echo $((- -5))
 5
 ```
 
-<a id="arithmetic-multiplication-operator></a>
+<a id="arithmetic-multiplication-operator"></a>
 ### * operator
 
 The `*` operator is an arithmetic operator used to multiply numeric values:
@@ -163,7 +163,7 @@ $ echo $((3 * 2))
 6
 ```
 
-<a id="arithmetic-division-operator></a>
+<a id="arithmetic-division-operator"></a>
 ### / operator
 
 The `/` operator is an arithmetic operator used to divide numeric values:
@@ -179,7 +179,7 @@ $ echo $((3 / 2.0))
 1.5
 ```
 
-<a id="arithmetic-module-operator></a>
+<a id="arithmetic-module-operator"></a>
 ### % operator
 
 The `%` operator is an arithmetic operator used to get the rest of the division:
@@ -189,7 +189,7 @@ $ echo $((5 % 2.4))
 0.2
 ```
 
-<a id="arithmetic-power-operator></a>
+<a id="arithmetic-power-operator"></a>
 ### ** operator
 
 The `**` operator is an arithmetic operator used to obtain the result of elevation to power:
